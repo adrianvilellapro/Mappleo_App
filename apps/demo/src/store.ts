@@ -1,5 +1,6 @@
 import { backupSchema } from "../../../packages/domain/backup";
 import { activitySchema } from "../../../packages/domain/schemas";
+import { z } from "zod";
 import {
   commandSchema,
   WorkspaceMutations,
@@ -116,13 +117,38 @@ export class DemoStore extends WorkspaceMutations {
     }
     if (JSON.stringify(raw).length > 150000)
       throw Error("La operación es demasiado grande.");
-    const command = commandSchema.parse(raw),
+    const command = commandSchema
+        .or(
+          z
+            .object({
+              action: z.literal("archive"),
+              kind: z.enum(["companies", "offers"]),
+              id: z
+                .string()
+                .min(1)
+                .max(100)
+                .regex(/^[a-zA-Z0-9_:-]+$/),
+              archived: z.boolean(),
+            })
+            .strict(),
+        )
+        .parse(raw),
       before = this.snapshot();
     try {
       if (command.action === "profile")
         throw Error("Esta demo no tiene cuentas reales.");
       if (command.action === "save")
         this.save(command.kind, command.id, command.input);
+      if (command.action === "archive") {
+        const record = this.get(command.kind, command.id);
+        this.put(command.kind, {
+          ...record,
+          archivedAt: command.archived
+            ? new Date(this.clock()).toISOString()
+            : null,
+          updatedAt: new Date(this.clock()).toISOString(),
+        });
+      }
       if (command.action === "delete") this.remove(command);
       if (command.action === "moveTask")
         this.move(command.id, command.columnId, command.position);

@@ -6,11 +6,14 @@ type Device = {
   createdAt: string;
   lastSeenAt: string;
 };
-export function DesktopDevices() {
-  const [devices, setDevices] = useState<Device[]>([]),
+export function DesktopDevices({
+  initialDevices,
+}: { initialDevices?: Device[] } = {}) {
+  const [devices, setDevices] = useState<Device[]>(initialDevices ?? []),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(false);
   useEffect(() => {
+    if (initialDevices) return;
     let active = true;
     void fetch("/api/desktop/devices")
       .then(async (response) => {
@@ -24,7 +27,7 @@ export function DesktopDevices() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [initialDevices]);
   return (
     <section className="panel settings-section">
       <h2>Equipos conectados</h2>

@@ -34,6 +34,8 @@ Supports 64-bit Windows 10/11. Installer in English and Spanish; application int
 
 **An exclusively web-based, static demo** featuring the fictitious John Miller profile and six months of activity: 24 companies, 64 job offers, 54 applications, 36 contacts, 18 events, 34 tasks and a history of 64 completions.
 
+It uses the real web application's components, forms and styles, including its mobile layout. Account, file and export features are disabled in this demo.
+
 Create and edit records, link them, complete tasks, move cards and explore the calendar and statistics. Changes stay temporarily in this browser tab for **up to 30 minutes**; sample data is restored automatically on expiry. There are no real accounts, sync, file uploads or API calls. Do not enter personal information. This is not a downloadable Windows demo.
 
 The demo is available on **GitHub Pages**, separately from the web application: **it is not part of the Vercel service**. The `gh-pages` branch contains the ready-to-serve site, with no keys or services.

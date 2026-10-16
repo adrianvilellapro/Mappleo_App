@@ -19,10 +19,15 @@ export function Calendar({
   initialMonth,
   initialItems,
   today,
+  loadItems,
 }: {
   initialMonth: string;
   initialItems: CalendarItem[];
   today: string;
+  loadItems?: (
+    month: string,
+    signal: AbortSignal,
+  ) => Promise<{ month: string; items: CalendarItem[] }>;
 }) {
   const [month, setMonth] = useState(initialMonth);
   const [selected, setSelected] = useState(today);
@@ -55,11 +60,15 @@ export function Calendar({
       });
       return () => controller.abort();
     }
-    fetch("/api/calendar?month=" + month, { signal: controller.signal })
-      .then(async (r) => {
-        if (!r.ok) throw new Error("No se ha podido cargar el calendario.");
-        return r.json();
-      })
+    const request = loadItems
+      ? loadItems(month, controller.signal)
+      : fetch("/api/calendar?month=" + month, {
+          signal: controller.signal,
+        }).then(async (r) => {
+          if (!r.ok) throw new Error("No se ha podido cargar el calendario.");
+          return r.json();
+        });
+    request
       .then((data) => {
         if (controller.signal.aborted) return;
         if (cache.current.size >= 12)
@@ -75,7 +84,7 @@ export function Calendar({
         if (!controller.signal.aborted) setError(e.message);
       });
     return () => controller.abort();
-  }, [month, initialMonth, initialItems, revision]);
+  }, [month, initialMonth, initialItems, revision, loadItems]);
   const items =
     month === initialMonth
       ? initialItems

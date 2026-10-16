@@ -1,6 +1,7 @@
 import { defineConfig, type Plugin } from "vite";
 import ts from "typescript";
 import { fileURLToPath } from "node:url";
+import { resolve, dirname, isAbsolute } from "node:path";
 import { english } from "./english";
 
 export function translateDemo(source: string, id: string): string {
@@ -47,6 +48,81 @@ export function translateDemo(source: string, id: string): string {
   return source;
 }
 export function demoConfig(language: "es" | "en") {
+  const projectRoot = fileURLToPath(new URL("../../", import.meta.url));
+  const demoFile = (name: string) =>
+    fileURLToPath(new URL("./src/" + name, import.meta.url));
+  const replacements = new Map([
+    [
+      resolve(projectRoot, "features/tracker/actions"),
+      demoFile("web-actions.ts"),
+    ],
+    [
+      resolve(projectRoot, "features/tasks/actions"),
+      demoFile("web-actions.ts"),
+    ],
+    [
+      resolve(projectRoot, "features/account/actions"),
+      demoFile("restricted.ts"),
+    ],
+    [
+      resolve(projectRoot, "features/reports/worker-client"),
+      demoFile("report-unavailable.ts"),
+    ],
+  ]);
+  const localTransport: Plugin = {
+    name: "mappleo-demo-browser-only-transport",
+    enforce: "pre",
+    resolveId(source, importer) {
+      const target = source.startsWith("@/")
+        ? resolve(projectRoot, source.slice(2))
+        : source.startsWith(".") && importer
+          ? resolve(dirname(importer.split("?")[0]), source)
+          : source;
+      const replacement = replacements.get(
+        (isAbsolute(target) ? resolve(target) : target).replace(
+          /\.[jt]sx?$/,
+          "",
+        ),
+      );
+      if (replacement) return replacement;
+      if (
+        source === "server-only" ||
+        source.startsWith("node:") ||
+        source.includes("@prisma/")
+      )
+        throw Error("Server code is forbidden in the static demo: " + source);
+    },
+    transform(source, id) {
+      if (id.includes("node_modules") || !/\.[jt]sx?$/.test(id)) return;
+      if (
+        /^[\s\S]*?['"]use server['"];|import\s*['"]server-only['"]/.test(source)
+      )
+        throw Error("A server module reached the demo build: " + id);
+      if (
+        language === "en" &&
+        id.replaceAll("\\", "/").endsWith("/lib/dates.ts")
+      )
+        return {
+          code: source.replaceAll('.setLocale("es")', '.setLocale("en")'),
+          map: null,
+        };
+    },
+    generateBundle(_options, bundle) {
+      for (const output of Object.values(bundle))
+        if (output.type === "chunk") {
+          for (const id of Object.keys(output.modules))
+            if (
+              /\/apps\/windows\/|\/lib\/(?:db|auth\.ts)|\/features\/(?:tracker|tasks)\/services?\./.test(
+                id.replaceAll("\\", "/"),
+              )
+            )
+              throw Error(
+                "Desktop or server implementation reached the demo bundle: " +
+                  id,
+              );
+        }
+    },
+  };
   const localize: Plugin = {
     name: "mappleo-demo-copy",
     enforce: "pre",
@@ -58,11 +134,22 @@ export function demoConfig(language: "es" | "en") {
       )
         return;
       if (
-        /\/apps\/demo\/src\/|\/apps\/windows\/src\/renderer\/(?:Views|Editor|RecordDetails|model)\.|\/packages\/(?:domain|ui)\//.test(
+        /\/apps\/demo\/src\/|\/features\/|\/components\/|\/lib\/(?:utils|dates)\.|\/packages\/(?:domain|ui)\//.test(
           id.replaceAll("\\", "/"),
         )
       )
-        return { code: translateDemo(source, id), map: null };
+        return {
+          code: translateDemo(
+            id.replaceAll("\\", "/").endsWith("/features/dashboard/view.tsx")
+              ? source.replaceAll(
+                  'DateTimeFormat("es",',
+                  'DateTimeFormat("en",',
+                )
+              : source,
+            id,
+          ),
+          map: null,
+        };
     },
     transformIndexHtml(html) {
       const csp =
@@ -83,8 +170,16 @@ export function demoConfig(language: "es" | "en") {
     envPrefix: "MAPPLEO_PUBLIC_DEMO_",
     logLevel: "warn",
     define: { __DEMO_LANGUAGE__: JSON.stringify(language) },
-    plugins: [localize],
+    plugins: [localTransport, localize],
+    css: { postcss: projectRoot },
     resolve: {
+      alias: [
+        { find: "next/navigation", replacement: demoFile("router.tsx") },
+        { find: "next/link", replacement: demoFile("router.tsx") },
+        { find: "next/image", replacement: demoFile("image.tsx") },
+        { find: "next-auth/react", replacement: demoFile("restricted.ts") },
+        { find: /^@\//, replacement: projectRoot.replaceAll("\\", "/") + "/" },
+      ],
       dedupe: [
         "react",
         "react-dom",

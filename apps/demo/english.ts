@@ -1,6 +1,8 @@
 /** Build-time copy for the browser demo only. Windows and the web app stay unchanged.
  * Match complete display strings, never keys, stored data or rendered DOM nodes. */
+import { webEnglish } from "./web-english";
 export const english: Record<string, string> = {
+  ...webEnglish,
   "Ciudad, país o remoto": "City, country or remote",
   "Página de empleo": "Careers page",
   "Descripción de la oferta": "Job description",

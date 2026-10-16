@@ -15,9 +15,11 @@ import { useHydrated } from "@/lib/use-hydrated";
 export function StatisticsView({
   report,
   companies,
+  readOnlyDemo = false,
 }: {
   report: Statistics;
   companies: { id: string; name: string }[];
+  readOnlyDemo?: boolean;
 }) {
   const { secureFetch, dialog } = useIdentityConfirmation();
   const hydrated = useHydrated();
@@ -29,6 +31,7 @@ export function StatisticsView({
     [error, setError] = useState("");
   const params = new URLSearchParams(report.filters);
   const download = async () => {
+    if (readOnlyDemo) return;
     setExporting(true);
     setError("");
     try {
@@ -89,7 +92,8 @@ export function StatisticsView({
         </div>
         <button
           className="button button-outline"
-          disabled={!hydrated || exporting || pending}
+          disabled={!hydrated || exporting || pending || readOnlyDemo}
+          title={readOnlyDemo ? "No disponible en la demo" : undefined}
           onClick={download}
         >
           <Download size={16} />

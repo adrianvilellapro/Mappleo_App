@@ -1,283 +1,378 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
-for (const lang of ["es", "en"] as const)
-  test(`${lang}: linked offers, applications, contacts, events and tasks are creatable`, async ({
-    page,
-  }) => {
-    const en = lang === "en";
-    await page.goto(`./${lang}/index.html`);
-    const go = (name: RegExp) =>
-      page.getByRole("navigation").getByRole("button", { name }).click();
-    const save = async () => {
-      await page
-        .getByRole("dialog")
-        .last()
-        .getByRole("button", { name: en ? "Save changes" : "Guardar cambios" })
-        .click();
-      await expect(page.getByRole("dialog")).toHaveCount(0);
-    };
-    await go(en ? /^Job offers/ : /^Ofertas/);
-    await page
-      .getByRole("button", {
-        name: en ? "New job offer" : "Nueva oferta",
-        exact: true,
-      })
-      .click();
-    await page
-      .getByRole("dialog")
-      .getByLabel(en ? "Job title" : "Puesto", { exact: false })
-      .fill("Portfolio test offer");
-    await save();
-    await expect(
-      page.getByText("Portfolio test offer", { exact: true }),
-    ).toBeVisible();
-    await go(en ? /^Applications/ : /^Candidaturas/);
-    await page
-      .getByRole("button", {
-        name: en ? "New application" : "Nueva candidatura",
-        exact: true,
-      })
-      .click();
-    await page
-      .getByPlaceholder(
-        en ? "Search offers or companies…" : "Buscar oferta o empresa…",
-      )
-      .fill("Portfolio test offer");
-    await page.locator(".offer-options button").first().click();
-    await save();
-    await expect(
-      page.getByText("Portfolio test offer", { exact: true }),
-    ).toBeVisible();
-    await go(en ? /^Contacts/ : /^Contactos/);
-    await page
-      .getByRole("button", {
-        name: en ? "New contact" : "Nuevo contacto",
-        exact: true,
-      })
-      .click();
-    await page
-      .getByRole("dialog")
-      .getByLabel(en ? "Name" : "Nombre", { exact: false })
-      .fill("Portfolio test contact");
-    await save();
-    await expect(
-      page.getByText("Portfolio test contact", { exact: true }),
-    ).toBeVisible();
-    await go(/^Networking/);
-    await page
-      .getByRole("button", {
-        name: en ? "New event" : "Nuevo evento",
-        exact: true,
-      })
-      .click();
-    await page
-      .getByRole("dialog")
-      .getByLabel(en ? "Name" : "Nombre", { exact: false })
-      .fill("Portfolio test event");
-    await save();
-    await expect(
-      page.getByText("Portfolio test event", { exact: true }),
-    ).toBeVisible();
-    await go(/^Kanban/);
-    await page
-      .getByRole("button", {
-        name: en ? "New column" : "Nueva columna",
-        exact: true,
-      })
-      .click();
-    await page
-      .getByRole("dialog")
-      .getByLabel(en ? "Name" : "Nombre", { exact: false })
-      .fill("Portfolio column");
-    await save();
-    await page
-      .getByRole("button", {
-        name: (en ? "Add task to " : "Añadir tarea en ") + "Portfolio column",
-        exact: true,
-      })
-      .click();
-    await page
-      .getByRole("dialog")
-      .getByLabel(en ? "Title" : "Título", { exact: false })
-      .fill("Portfolio task");
-    await save();
-    await page
-      .getByRole("button", {
-        name: (en ? "Complete " : "Completar ") + "Portfolio task",
-        exact: true,
-      })
-      .click();
-    await expect(
-      page
-        .locator(".kanban-card.completed")
-        .filter({ hasText: "Portfolio task" }),
-    ).toBeVisible();
-  });
+const copy = (en: boolean, es: string, english: string) => (en ? english : es);
+async function go(page: Page, name: string) {
+  await page
+    .locator(".sidebar")
+    .getByRole("link", { name, exact: true })
+    .click();
+  if (["Estadísticas", "Statistics"].includes(name))
+    await expect(page.locator(".statistics-page")).toBeVisible();
+}
+async function save(page: Page, en: boolean, task = false) {
+  await page
+    .getByRole("dialog")
+    .last()
+    .getByRole("button", {
+      name: task
+        ? copy(en, "Guardar tarea", "Save task")
+        : copy(en, "Guardar cambios", "Save changes"),
+      exact: true,
+    })
+    .click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+}
+async function close(page: Page, en: boolean) {
+  await page
+    .getByRole("dialog")
+    .getByRole("button", {
+      name: copy(en, "Cerrar panel", "Close panel"),
+      exact: true,
+    })
+    .click();
+}
+async function visibleRow(page: Page, title: string) {
+  return page
+    .locator(
+      ".desktop-table:visible tbody tr, .mobile-records:visible .mobile-record",
+    )
+    .filter({ hasText: title })
+    .first();
+}
 
-for (const lang of ["es", "en"] as const)
-  test(`${lang}: browser-only CRUD, tasks, details, expiry and no API traffic`, async ({
+for (const lang of ["es", "en"] as const) {
+  const en = lang === "en";
+  test(`${lang}: actual web forms create related companies, offers, applications, contacts, events and tasks`, async ({
     page,
   }, info) => {
-    const en = lang === "en",
-      requests: string[] = [],
-      errors: string[] = [];
-    page.on("request", (req) => {
-      if (
-        req.resourceType() === "fetch" ||
-        req.resourceType() === "xhr" ||
-        req.url().includes("/api/")
-      )
-        requests.push(req.url());
-    });
-    page.on("pageerror", (error) => errors.push(error.message));
     await page.goto(`./${lang}/index.html`);
-    await expect(page.getByRole("note")).toContainText(
-      en ? "Interactive static demo" : "Demo estática interactiva",
-    );
-    await expect(page.getByRole("note").getByRole("button")).toHaveCount(0);
-    await expect(page.getByRole("note")).not.toContainText(/\d+ min$/);
+    const company = "Portfolio company " + info.project.name;
+    const title = "Portfolio offer " + info.project.name;
+    await go(page, copy(en, "Empresas", "Companies"));
+    await page
+      .getByRole("button", {
+        name: copy(en, "Nueva empresa", "New company"),
+        exact: true,
+      })
+      .click();
+    await page
+      .getByRole("dialog")
+      .getByLabel(copy(en, "Nombre", "Name"), { exact: false })
+      .fill(company);
+    await save(page, en);
+    await go(page, copy(en, "Ofertas", "Job offers"));
+    await page
+      .getByRole("button", {
+        name: copy(en, "Nueva oferta", "New job offer"),
+        exact: true,
+      })
+      .click();
+    const offer = page.getByRole("dialog");
+    await offer
+      .getByLabel(copy(en, "Puesto", "Job title"), { exact: false })
+      .fill(title);
+    await offer.locator("#companyId").click();
+    await page.getByRole("option", { name: company, exact: true }).click();
+    await save(page, en);
+    await go(page, copy(en, "Candidaturas", "Applications"));
+    await page
+      .getByRole("button", {
+        name: copy(en, "Nueva candidatura", "New application"),
+        exact: true,
+      })
+      .click();
+    await page.getByRole("dialog").locator("#jobOfferId").fill(title);
+    await page.getByRole("option").filter({ hasText: title }).click();
+    await save(page, en);
+    await expect(await visibleRow(page, title)).toBeVisible();
+    await (await visibleRow(page, title)).click();
+    await expect(page.locator(".sheet-content form").first()).toBeVisible();
+    await page
+      .getByRole("dialog")
+      .getByLabel(copy(en, "Título de actividad", "Activity title"))
+      .fill("Portfolio history");
+    await page
+      .getByRole("dialog")
+      .getByRole("button", {
+        name: copy(en, "Añadir al historial", "Add to history"),
+      })
+      .click();
+    await expect(
+      page.getByRole("dialog").getByText("Portfolio history", { exact: true }),
+    ).toBeVisible();
+    await close(page, en);
+    await go(page, copy(en, "Contactos", "Contacts"));
+    await page
+      .getByRole("button", {
+        name: copy(en, "Nuevo contacto", "New contact"),
+        exact: true,
+      })
+      .click();
+    await page
+      .getByRole("dialog")
+      .getByLabel(copy(en, "Nombre", "Name"), { exact: false })
+      .fill("Portfolio contact");
+    await save(page, en);
+    await go(page, "Networking");
+    await page
+      .getByRole("button", {
+        name: copy(en, "Nuevo evento", "New event"),
+        exact: true,
+      })
+      .click();
+    await page
+      .getByRole("dialog")
+      .getByLabel(copy(en, "Nombre", "Name"), { exact: false })
+      .fill("Portfolio event");
+    await save(page, en);
+    await go(page, copy(en, "Ofertas", "Job offers"));
+    await (await visibleRow(page, title)).click();
+    await page
+      .getByRole("dialog")
+      .getByRole("link", { name: copy(en, "Crear acción", "Create action") })
+      .click();
     await expect(
       page
-        .getByRole("navigation")
-        .getByRole("button", { name: en ? /^Companies/ : /^Empresas/ }),
+        .getByRole("dialog")
+        .getByRole("heading", { name: copy(en, "Nueva tarea", "New task") }),
     ).toBeVisible();
-    await page
-      .getByRole("navigation")
-      .getByRole("button", { name: en ? /^Companies/ : /^Empresas/ })
-      .click();
-    await page
-      .getByRole("button", {
-        name: en ? "New company" : "Nueva empresa",
-        exact: true,
-      })
-      .click();
-    const dialog = page.getByRole("dialog").last();
-    await dialog
-      .getByLabel(en ? "Name" : "Nombre", { exact: false })
-      .fill("Portfolio " + lang + " " + info.project.name);
-    await dialog
-      .getByRole("button", { name: en ? "Save changes" : "Guardar cambios" })
-      .click();
-    await expect(page.getByRole("dialog")).toHaveCount(0);
-    const name = "Portfolio " + lang + " " + info.project.name;
-    await expect(page.getByText(name, { exact: true })).toBeVisible();
-    await page.reload();
-    await page
-      .getByRole("navigation")
-      .getByRole("button", { name: en ? /^Companies/ : /^Empresas/ })
-      .click();
-    await page.getByText(name, { exact: true }).click();
-    await expect(page.getByRole("dialog")).toBeVisible();
+    await expect(
+      page.getByRole("dialog").locator(".task-linked-list"),
+    ).toContainText(title);
     await page
       .getByRole("dialog")
-      .getByRole("button", { name: en ? "Edit" : "Editar", exact: true })
-      .click();
-    await page
-      .getByRole("dialog")
-      .last()
-      .getByRole("button", { name: en ? "Delete" : "Eliminar", exact: true })
-      .click();
-    await page
-      .locator(".delete-confirm")
+      .getByLabel(copy(en, "Título de tarea", "Task title"))
+      .fill("Portfolio linked task");
+    await save(page, en, true);
+    const card = page
+      .locator(".kanban-card")
+      .filter({ hasText: "Portfolio linked task" });
+    await expect(card).toBeVisible();
+    await card
       .getByRole("button", {
-        name: en ? "Yes, delete" : "Sí, eliminar",
+        name: copy(
+          en,
+          "Completar tarea: Portfolio linked task",
+          "Complete task: Portfolio linked task",
+        ),
         exact: true,
       })
-      .click();
-    await expect(page.getByRole("dialog")).toHaveCount(0);
-    await expect(page.getByText(name, { exact: true })).toHaveCount(0);
-    await page
-      .getByRole("navigation")
-      .getByRole("button", { name: "Kanban", exact: true })
       .click();
     await expect(
-      page.getByRole("link", { name: /Lo siguiente|Up next/ }),
-    ).toHaveCount(0);
-    const card = page.locator(".kanban-card").first();
-    await expect(card).toBeVisible();
-    if (info.project.name === "desktop") {
-      const column = page.locator(".kanban-column").nth(2);
-      const title = await card.locator("strong").first().textContent();
-      await card.dragTo(column);
-      await expect(column).toContainText(title!);
-    }
+      page.getByRole("button", {
+        name: copy(
+          en,
+          "Completada: Portfolio linked task",
+          "Completed: Portfolio linked task",
+        ),
+        exact: true,
+      }),
+    ).toBeDisabled();
+  });
+
+  test(`${lang}: web layout, editable side sheets, calendar, settings, search and isolated cache`, async ({
+    page,
+  }, info) => {
+    const requests: string[] = [],
+      errors: string[] = [];
+    page.on("request", (r) => {
+      if (
+        ["fetch", "xhr"].includes(r.resourceType()) ||
+        r.url().includes("/api/")
+      )
+        requests.push(r.url());
+    });
+    page.on("pageerror", (e) => errors.push(e.message));
+    await page.goto(`./${lang}/index.html`);
+    await expect(page.getByRole("note")).toContainText(
+      copy(en, "Demo estática interactiva", "Interactive static demo"),
+    );
+    await expect(page.getByRole("note").getByRole("button")).toHaveCount(0);
+    await expect(page.locator(".sidebar .version")).toHaveText("BETA");
+    await expect(page.locator(".shortcut-help")).toBeVisible();
+    await expect(page.locator(".metric-grid .metric")).toHaveCount(4);
+    const calendar = page.locator(".calendar-panel");
+    await calendar.scrollIntoViewIfNeeded();
+    await calendar
+      .getByRole("button", { name: copy(en, "Mes anterior", "Previous month") })
+      .click();
+    await expect(calendar.locator(".calendar-grid")).toBeVisible();
+    await go(page, copy(en, "Contactos", "Contacts"));
     await page
-      .getByRole("navigation")
+      .locator(
+        ".desktop-table:visible tbody tr, .mobile-records:visible .mobile-record",
+      )
+      .first()
+      .click();
+    await expect(page.locator(".sheet-content .editor-body")).toBeVisible();
+    await expect(
+      page
+        .getByRole("dialog")
+        .getByLabel(copy(en, "Email", "Email"), { exact: true }),
+    ).toBeVisible();
+    await expect(page.locator(".record-sheet")).toHaveCount(0);
+    const name = "Temporary contact " + info.project.name;
+    await page
+      .getByRole("dialog")
+      .getByLabel(copy(en, "Nombre", "Name"), { exact: false })
+      .fill(name);
+    await save(page, en);
+    await page.reload();
+    await (await visibleRow(page, name)).click();
+    await expect(
+      page
+        .getByRole("dialog")
+        .getByLabel(copy(en, "Nombre", "Name"), { exact: false }),
+    ).toHaveValue(name);
+    await page
+      .getByRole("dialog")
       .getByRole("button", {
-        name: en ? "Statistics" : "Estadísticas",
+        name: copy(en, "Eliminar", "Delete"),
         exact: true,
       })
       .click();
+    await page
+      .getByRole("dialog")
+      .getByRole("button", {
+        name: copy(en, "Sí, eliminar", "Yes, delete"),
+        exact: true,
+      })
+      .click();
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await expect(await visibleRow(page, name)).toHaveCount(0);
+    await go(page, copy(en, "Estadísticas", "Statistics"));
     await expect(
       page.getByRole("heading", {
-        name: en ? "Applications by month" : "Candidaturas por mes",
+        name: copy(en, "Estadísticas", "Statistics"),
+        exact: true,
       }),
     ).toBeVisible();
-    await expect(page.getByRole("button", { name: /PDF/ })).toHaveCount(0);
-    const width = await page.evaluate(() => ({
-      page: document.documentElement.scrollWidth,
-      viewport: innerWidth,
-    }));
-    expect(width.page).toBeLessThanOrEqual(width.viewport + 1);
+    await expect(page.getByRole("button", { name: /PDF/ })).toBeDisabled();
+    await page
+      .getByRole("combobox", {
+        name: copy(en, "Periodo", "Period"),
+        exact: true,
+      })
+      .click();
+    await page
+      .getByRole("option", {
+        name: copy(en, "Últimos 6 meses", "Last 6 months"),
+        exact: true,
+      })
+      .click();
+    await page
+      .getByRole("button", {
+        name: copy(en, "Aplicar filtros", "Apply filters"),
+        exact: true,
+      })
+      .click();
+    await expect(page.locator(".statistics-page")).toBeVisible();
+    await go(page, copy(en, "Configuración", "Settings"));
+    await expect(
+      page.getByRole("heading", {
+        name: copy(en, "Tu espacio, tus datos.", "Your workspace, your data."),
+        exact: true,
+      }),
+    ).toBeVisible();
+    await expect(
+      page
+        .getByLabel(copy(en, "Contraseña actual", "Current password"))
+        .first(),
+    ).toBeDisabled();
+    await expect(page.locator("#import-file")).toBeDisabled();
+    await expect(
+      page.getByText(
+        copy(en, "No hay equipos conectados.", "No connected devices."),
+        { exact: true },
+      ),
+    ).toBeVisible();
+    await page
+      .getByRole("button", { name: copy(en, "Oscuro", "Dark"), exact: true })
+      .click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await page
+      .getByRole("button", { name: copy(en, "Claro", "Light"), exact: true })
+      .click();
+    const search = page.getByRole("search").getByRole("textbox");
+    await search.fill("Aurora");
+    await search.press("Enter");
+    await expect(page.locator(".search-results")).not.toHaveCount(0);
+    await expect(page.locator(".search-results").first()).toContainText(
+      "Aurora",
+    );
     await page.evaluate(() => {
       const key = Object.keys(sessionStorage).find((k) =>
         k.startsWith("mappleo-portfolio-demo"),
       )!;
-      const stored = JSON.parse(sessionStorage.getItem(key)!);
-      stored.expiresAt = Date.now() - 1;
-      sessionStorage.setItem(key, JSON.stringify(stored));
+      const cached = JSON.parse(sessionStorage.getItem(key)!);
+      cached.expiresAt = Date.now() - 1;
+      sessionStorage.setItem(key, JSON.stringify(cached));
     });
     await page.reload();
     expect(await page.evaluate(() => typeof window.mappleo)).toBe("undefined");
     expect(requests).toEqual([]);
     expect(errors).toEqual([]);
     await page.screenshot({
-      path: `test-results-demo/${lang}-${info.project.name}.png`,
-      fullPage: true,
+      path: `test-results-demo/${lang}-web-${info.project.name}.png`,
     });
   });
 
-for (const lang of ["es", "en"] as const)
-  test(`${lang}: navigation stays accessible while scrolling long sections`, async ({
+  test(`${lang}: navigation remains visible at the end of long web lists`, async ({
     page,
   }) => {
     await page.goto(`./${lang}/index.html`);
-    const nav = page.getByRole("navigation");
-    for (const section of lang === "en"
-      ? [/^Companies/, /^Job offers/, /^Applications/, /^Statistics/]
-      : [/^Empresas/, /^Ofertas/, /^Candidaturas/, /^Estadísticas/]) {
-      await nav.getByRole("button", { name: section }).click();
+    for (const name of en
+      ? ["Companies", "Job offers", "Applications", "Statistics"]
+      : ["Empresas", "Ofertas", "Candidaturas", "Estadísticas"]) {
+      await go(page, name);
       const main = page.locator("main");
-      await expect
-        .poll(() => main.evaluate((element) => element.scrollTop))
-        .toBe(0);
-      await main.evaluate((element) => {
-        const scroller =
-          element.scrollHeight > element.clientHeight + 1
-            ? element
-            : document.scrollingElement!;
-        scroller.scrollTop = scroller.scrollHeight;
+      await expect.poll(() => main.evaluate((e) => e.scrollTop)).toBe(0);
+      await main.evaluate((e) => {
+        e.scrollTop = e.scrollHeight;
       });
       await expect
-        .poll(() => main.evaluate((element) => element.scrollTop))
+        .poll(() => main.evaluate((e) => e.scrollTop))
         .toBeGreaterThan(100);
-      await expect(nav).toBeInViewport({ ratio: 1 });
-      const width = await page.evaluate(() => ({
-        page: document.documentElement.scrollWidth,
-        viewport: innerWidth,
-      }));
-      expect(width.page).toBeLessThanOrEqual(width.viewport + 1);
+      await expect(page.getByRole("navigation")).toBeInViewport({ ratio: 1 });
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth + 1,
+        ),
+      ).toBe(true);
     }
-    await nav
-      .getByRole("button", { name: lang === "en" ? /^Today/ : /^Hoy/ })
-      .click();
-    await expect(nav.getByRole("button").first()).toHaveAttribute(
-      "aria-current",
-      "page",
-    );
   });
+}
 
-test("short desktop windows can scroll the sidebar to every section", async ({
+test("desktop: full web drag preview and task movement", async ({
+  page,
+}, info) => {
+  test.skip(info.project.name !== "desktop", "Desktop pointer interaction.");
+  await page.goto("./es/index.html#/kanban");
+  const card = page
+    .locator(".kanban-lane")
+    .nth(0)
+    .locator(".kanban-card")
+    .first();
+  const taskId = await card.getAttribute("data-task-id");
+  const start = await card.locator(".task-preview").boundingBox();
+  const destination = page.locator(".kanban-lane").nth(1);
+  const bounds = await destination.boundingBox();
+  await page.mouse.move(
+    start!.x + start!.width / 2,
+    start!.y + start!.height / 2,
+  );
+  await page.mouse.down();
+  await page.mouse.move(start!.x + 12, start!.y + 12, { steps: 5 });
+  await expect(page.locator(".drag-preview .task-preview")).toBeVisible();
+  await page.mouse.move(bounds!.x + bounds!.width / 2, bounds!.y + 70, {
+    steps: 15,
+  });
+  await expect(destination.locator(".kanban-drop-slot")).toBeVisible();
+  await page.mouse.up();
+  await expect(destination.locator(`[data-task-id="${taskId}"]`)).toBeVisible();
+});
+
+test("short desktop windows can reach every web navigation entry", async ({
   page,
 }, info) => {
   test.skip(info.project.name !== "desktop", "Desktop sidebar overflow only.");
@@ -285,25 +380,23 @@ test("short desktop windows can scroll the sidebar to every section", async ({
   await page.goto("./es/index.html");
   const statistics = page
     .getByRole("navigation")
-    .getByRole("button", { name: "Estadísticas", exact: true });
+    .getByRole("link", { name: "Estadísticas", exact: true });
   await statistics.scrollIntoViewIfNeeded();
   await expect(statistics).toBeInViewport({ ratio: 1 });
   await statistics.click();
-  await expect(statistics).toHaveAttribute("aria-current", "page");
-  await page.locator(".sidebar").evaluate((element) => {
-    element.scrollTop = 0;
+  await page.locator(".sidebar").evaluate((e) => {
+    e.scrollTop = 0;
   });
-  const today = page.getByRole("navigation").getByRole("button").first();
+  const today = page.getByRole("navigation").getByRole("link").first();
   await expect(today).toBeInViewport({ ratio: 1 });
   await today.click();
-  await expect(today).toHaveAttribute("aria-current", "page");
 });
 
-test("Spanish euro key opens company creation but never interrupts typing currency", async ({
+test("web company shortcut supports the euro key without interrupting typed currency", async ({
   page,
 }) => {
   await page.goto("./es/index.html");
-  await page.getByRole("navigation").waitFor();
+  await page.locator(".topbar").waitFor();
   await page.evaluate(() =>
     window.dispatchEvent(
       new KeyboardEvent("keydown", {
@@ -316,8 +409,8 @@ test("Spanish euro key opens company creation but never interrupts typing curren
     ),
   );
   await expect(page.getByRole("dialog")).toBeVisible();
-  await page.getByRole("button", { name: "Cerrar", exact: true }).click();
-  const search = page.getByLabel("Buscar en todo Mappleo");
+  await close(page, false);
+  const search = page.getByLabel("Búsqueda global");
   await search.focus();
   await search.dispatchEvent("keydown", {
     key: "€",

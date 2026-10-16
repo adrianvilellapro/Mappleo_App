@@ -1,24 +1,26 @@
-#root {
+/* Presentation comes from app/globals.css. Only the demo notice and its viewport
+   allocation differ: no desktop stylesheet, component restyling or copied theme. */
+#root,
+.demo-root {
   display: flex;
   flex-direction: column;
   height: 100dvh;
+  min-height: 0;
   overflow: hidden;
 }
 .demo-banner {
   flex-shrink: 0;
-  position: relative;
-  z-index: 10;
   display: flex;
   align-items: center;
-  gap: 24px;
   justify-content: space-between;
+  gap: 24px;
   padding: 14px 24px;
   background: #123e38;
   color: #f4fcfa;
   font-size: 12px;
   line-height: 1.6;
 }
-.demo-banner > div:first-child {
+.demo-banner > div {
   max-width: 1000px;
 }
 .demo-banner strong {
@@ -26,33 +28,23 @@
   font-size: 14px;
   margin-bottom: 2px;
 }
-.demo-banner-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
 .demo-banner a {
   color: #fff;
+  text-decoration: underline;
   text-underline-offset: 3px;
+  flex-shrink: 0;
 }
 .demo-application {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-columns: 224px minmax(0, 1fr);
   flex: 1;
   min-height: 0;
   overflow: hidden;
 }
-.demo-application .workspace {
-  display: flex;
-  flex-direction: column;
-  margin-left: 0;
-  min-height: 0;
-}
 .demo-application .sidebar {
   position: relative;
   inset: auto;
-  width: 220px;
+  width: auto;
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior-y: contain;
@@ -60,43 +52,55 @@
 .demo-application .sidebar > * {
   flex-shrink: 0;
 }
+.demo-application .workspace {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  min-height: 0;
+}
 .demo-application .topbar {
   flex-shrink: 0;
 }
-.demo-application .page {
+.demo-application main {
   flex: 1;
   min-height: 0;
-  width: 100%;
-  overflow-y: auto;
+  overflow: auto;
   overscroll-behavior-y: contain;
 }
-.demo-application .board {
-  max-height: none;
+.demo-application main:focus {
+  outline: none;
 }
-.demo-local {
-  padding: 6px 8px;
+.demo-unavailable {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
 }
-.record-sheet-body {
-  padding: 24px;
-  overflow-y: auto;
+.demo-message {
+  position: fixed;
+  z-index: 60;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  max-width: min(500px, calc(100vw - 32px));
+  box-shadow: 0 8px 32px #0002;
+}
+@media (max-width: 1180px) {
+  .demo-application {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
 }
 @media (max-width: 760px) {
-  .demo-application .calendar-panel > .panel-heading {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .demo-application .calendar-controls {
-    width: 100%;
-    justify-content: space-between;
-  }
   .demo-banner {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     padding: 12px 16px;
   }
-  .demo-banner-actions {
-    width: 100%;
-    justify-content: flex-end;
+  .demo-banner a {
+    margin-left: auto;
   }
   .demo-application {
     display: flex;
@@ -104,69 +108,9 @@
   }
   .demo-application .sidebar {
     flex-shrink: 0;
-    min-height: 0;
-    width: 100%;
     overflow: visible;
-    padding: 8px;
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
   }
-  .demo-application .sidebar-bottom,
-  .demo-application .local-edition {
-    display: none;
-  }
-  .demo-application .sidebar nav {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 6px;
-  }
-  .demo-application .sidebar nav button {
-    flex-shrink: 0;
-  }
-  .demo-application .sidebar .brand {
-    padding: 8px 12px;
-  }
-  .record-sheet-body {
-    padding: 16px;
-  }
-  .demo-application .topbar {
-    padding: 0 16px;
-  }
-  .demo-application .page {
-    padding: 24px 16px;
-  }
-  .demo-application .metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .demo-application .page-heading {
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-  .demo-application .collection {
-    overflow-x: auto;
-  }
-  .demo-application .collection-toolbar {
-    flex-wrap: wrap;
-  }
-  .demo-application .statistics-filters,
-  .demo-application .statistics-grid,
-  .demo-application .detail-layout,
-  .demo-application .form-grid {
-    grid-template-columns: 1fr;
-  }
-  .demo-application .stats-extras {
-    grid-template-columns: 1fr;
-  }
-  .demo-application .notification {
-    left: 16px;
-    right: 16px;
-    transform: none;
-    bottom: 16px;
-    width: auto;
-  }
-  .editor .detail-layout,
-  .editor .form-grid {
-    grid-template-columns: 1fr;
+  .demo-application .workspace {
+    flex: 1;
   }
 }
