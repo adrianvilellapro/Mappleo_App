@@ -1,0 +1,1 @@
+async function e(e){throw Error(`Unavailable in the demo: do not enter passwords or personal information.`)}export{e as generateReport};

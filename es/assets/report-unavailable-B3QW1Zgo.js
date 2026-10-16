@@ -1,0 +1,1 @@
+async function e(e){throw Error(`No disponible en la demo: no introduzcas contraseñas ni datos personales.`)}export{e as generateReport};
