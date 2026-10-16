@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
   Building2,
@@ -64,6 +64,7 @@ function makeStore() {
 }
 
 export function App() {
+  const mainRef = useRef<HTMLElement>(null);
   const [store] = useState(makeStore),
     [data, setData] = useState(() => store.snapshot());
   const [section, setSection] = useState("today"),
@@ -77,6 +78,9 @@ export function App() {
     setDetail(null);
     setQuery("");
   };
+  useEffect(() => {
+    mainRef.current?.scrollTo(0, 0);
+  }, [section]);
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
@@ -314,6 +318,7 @@ export function App() {
             </div>
           </header>
           <main
+            ref={mainRef}
             id="main"
             className={"page " + (section === "board" ? "board-page" : "")}
           >

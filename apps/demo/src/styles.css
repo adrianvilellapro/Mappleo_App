@@ -1,4 +1,11 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
 .demo-banner {
+  flex-shrink: 0;
   position: relative;
   z-index: 10;
   display: flex;
@@ -32,20 +39,36 @@
 .demo-application {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
-  min-height: calc(100dvh - 104px);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 .demo-application .workspace {
+  display: flex;
+  flex-direction: column;
   margin-left: 0;
-  min-height: calc(100dvh - 104px);
-}
-.demo-application .sidebar {
-  width: 220px;
+  min-height: 0;
 }
 .demo-application .sidebar {
   position: relative;
-  top: auto;
-  height: auto;
-  min-height: 100%;
+  inset: auto;
+  width: 220px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
+.demo-application .sidebar > * {
+  flex-shrink: 0;
+}
+.demo-application .topbar {
+  flex-shrink: 0;
+}
+.demo-application .page {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
 }
 .demo-application .board {
   max-height: none;
@@ -76,11 +99,14 @@
     justify-content: flex-end;
   }
   .demo-application {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
   .demo-application .sidebar {
+    flex-shrink: 0;
     min-height: 0;
     width: 100%;
+    overflow: visible;
     padding: 8px;
     border-right: 0;
     border-bottom: 1px solid var(--border);

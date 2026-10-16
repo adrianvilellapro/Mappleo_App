@@ -237,6 +237,68 @@ for (const lang of ["es", "en"] as const)
     });
   });
 
+for (const lang of ["es", "en"] as const)
+  test(`${lang}: navigation stays accessible while scrolling long sections`, async ({
+    page,
+  }) => {
+    await page.goto(`./${lang}/index.html`);
+    const nav = page.getByRole("navigation");
+    for (const section of lang === "en"
+      ? [/^Companies/, /^Job offers/, /^Applications/, /^Statistics/]
+      : [/^Empresas/, /^Ofertas/, /^Candidaturas/, /^Estadísticas/]) {
+      await nav.getByRole("button", { name: section }).click();
+      const main = page.locator("main");
+      await expect
+        .poll(() => main.evaluate((element) => element.scrollTop))
+        .toBe(0);
+      await main.evaluate((element) => {
+        const scroller =
+          element.scrollHeight > element.clientHeight + 1
+            ? element
+            : document.scrollingElement!;
+        scroller.scrollTop = scroller.scrollHeight;
+      });
+      await expect
+        .poll(() => main.evaluate((element) => element.scrollTop))
+        .toBeGreaterThan(100);
+      await expect(nav).toBeInViewport({ ratio: 1 });
+      const width = await page.evaluate(() => ({
+        page: document.documentElement.scrollWidth,
+        viewport: innerWidth,
+      }));
+      expect(width.page).toBeLessThanOrEqual(width.viewport + 1);
+    }
+    await nav
+      .getByRole("button", { name: lang === "en" ? /^Today/ : /^Hoy/ })
+      .click();
+    await expect(nav.getByRole("button").first()).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
+  });
+
+test("short desktop windows can scroll the sidebar to every section", async ({
+  page,
+}, info) => {
+  test.skip(info.project.name !== "desktop", "Desktop sidebar overflow only.");
+  await page.setViewportSize({ width: 1100, height: 420 });
+  await page.goto("./es/index.html");
+  const statistics = page
+    .getByRole("navigation")
+    .getByRole("button", { name: "Estadísticas", exact: true });
+  await statistics.scrollIntoViewIfNeeded();
+  await expect(statistics).toBeInViewport({ ratio: 1 });
+  await statistics.click();
+  await expect(statistics).toHaveAttribute("aria-current", "page");
+  await page.locator(".sidebar").evaluate((element) => {
+    element.scrollTop = 0;
+  });
+  const today = page.getByRole("navigation").getByRole("button").first();
+  await expect(today).toBeInViewport({ ratio: 1 });
+  await today.click();
+  await expect(today).toHaveAttribute("aria-current", "page");
+});
+
 test("Spanish euro key opens company creation but never interrupts typing currency", async ({
   page,
 }) => {
