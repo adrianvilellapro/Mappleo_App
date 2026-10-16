@@ -1,0 +1,317 @@
+generator client {
+  provider = "prisma-client"
+  output = "../generated/prisma"
+}
+datasource db {
+  provider = "postgresql"
+}
+// Separate identity: a User can never acquire this role through registration/profile data.
+model AdminAccount {
+  id Int @id @default(1)
+  emailLookup String @unique
+  passwordHash String
+  actionPasswordHash String
+  fingerprint String
+  lastTotpCounter Int @default(-1)
+  createdAt DateTime @default(now())
+  sessions AdminSession[]
+}
+model AdminSession {
+  id String @id
+  adminId Int @default(1)
+  admin AdminAccount @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  fingerprint String
+  sourceHash String
+  expiresAt DateTime
+  lastSeenAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  @@index([expiresAt])
+}
+model RegistrationPolicy {
+  id Int @id @default(1)
+  maxAccounts Int @default(15)
+  accountCount Int @default(1)
+}
+model AdminAudit {
+  id String @id @default(cuid())
+  action String
+  targetUserId String?
+  sourceHash String
+  createdAt DateTime @default(now())
+  @@index([createdAt])
+}
+model User {
+  id String @id @default(cuid())
+  name String
+  email String @unique
+  emailLookup String? @unique
+  passwordHash String?
+  sessionVersion Int @default(0)
+  failedAttempts Int @default(0)
+  lockedUntil DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  companies Company[]
+  offers JobOffer[]
+  applications Application[]
+  contacts Contact[]
+  networkingEvents NetworkingEvent[]
+  technologyTags TechnologyTag[]
+  boardColumns BoardColumn[]
+  tasks Task[]
+  taskCompletions TaskCompletion[]
+  authSessions AuthSession[]
+  desktopDevices DesktopDevice[]
+  desktopAuthorizations DesktopAuthorization[]
+  syncVersion SyncVersion?
+}
+model DesktopDevice {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name String
+  tokenHash String @unique
+  sessionVersion Int
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  lastSeenAt DateTime @default(now())
+  @@index([userId])
+}
+model DesktopAuthorization {
+  codeHash String @id
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge String
+  redirectUri String
+  sessionVersion Int
+  expiresAt DateTime
+}
+model SyncVersion {
+  userId String @id
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  revision BigInt @default(1)
+}
+model AuthSession {
+  id String @id
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionVersion Int
+  expiresAt DateTime
+  verifiedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  @@index([userId])
+  @@index([expiresAt])
+}
+model SecurityEvent {
+  id String @id @default(cuid())
+  userId String?
+  type String
+  createdAt DateTime @default(now())
+  @@index([createdAt])
+  @@index([userId, createdAt])
+}
+model OperationLease {
+  key String @id
+  owner String
+  expiresAt DateTime
+  @@index([expiresAt])
+}
+model TechnologyTag {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name String
+  key String
+  createdAt DateTime @default(now())
+  @@unique([userId, key])
+  @@index([userId, name])
+}
+model AuthThrottle {
+  key String @id
+  count Int @default(0)
+  expiresAt DateTime
+  @@index([expiresAt])
+}
+model Company {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name String
+  websiteUrl String @default("")
+  faviconUrl String @default("")
+  domain String @default("")
+  careersUrl String @default("")
+  linkedinUrl String @default("")
+  location String @default("")
+  workMode String @default("UNKNOWN")
+  sector String @default("")
+  interestRating Int @default(3)
+  notes String @default("")
+  tags String[] @default([])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  archivedAt DateTime?
+  offers JobOffer[]
+  contacts Contact[]
+  networkingEvents NetworkingEvent[]
+  @@index([userId, name])
+  @@unique([id, userId])
+}
+model JobOffer {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyId String
+  company Company @relation(fields: [companyId, userId], references: [id, userId], onDelete: Restrict)
+  title String
+  url String @default("")
+  source String @default("OTHER")
+  location String @default("")
+  workMode String @default("UNKNOWN")
+  salaryMin Int?
+  salaryMax Int?
+  salaryCurrency String @default("EUR")
+  description String @default("")
+  notes String @default("")
+  technologies String[] @default([])
+  interestRating Int @default(3)
+  publishedAt DateTime?
+  deadlineAt DateTime?
+  savedAt DateTime @default(now())
+  archivedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  applications Application[]
+  @@index([userId, companyId])
+  @@unique([id, userId])
+}
+model Application {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobOfferId String
+  jobOffer JobOffer @relation(fields: [jobOfferId, userId], references: [id, userId], onDelete: Restrict)
+  status String @default("APPLIED")
+  appliedAt DateTime @default(now())
+  firstResponseAt DateTime?
+  nextAction String @default("")
+  nextActionDueAt DateTime?
+  cvVersion String @default("")
+  coverLetterUsed Boolean @default(false)
+  notes String @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  closedAt DateTime?
+  events ApplicationEvent[]
+  @@index([userId, jobOfferId, appliedAt])
+  @@index([userId, nextActionDueAt])
+}
+model ApplicationEvent {
+  id String @id @default(cuid())
+  applicationId String
+  application Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  type String
+  fromStatus String?
+  toStatus String?
+  title String
+  description String @default("")
+  happenedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  @@index([applicationId, happenedAt])
+}
+model Contact {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyId String?
+  company Company? @relation(fields: [companyId, userId], references: [id, userId], onDelete: Restrict)
+  name String
+  role String @default("")
+  email String @default("")
+  linkedinUrl String @default("")
+  phone String @default("")
+  notes String @default("")
+  lastContactAt DateTime?
+  followUpAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  networkingEvents NetworkingEvent[]
+  @@index([userId, name])
+}
+model NetworkingEvent {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name String
+  type String @default("OTHER")
+  startsAt DateTime
+  endsAt DateTime?
+  location String @default("")
+  url String @default("")
+  notes String @default("")
+  companies Company[]
+  contacts Contact[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([userId, startsAt])
+}
+
+model BoardColumn {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name String
+  position Int @default(0)
+  isDone Boolean @default(false)
+  systemKey String?
+  tasks Task[]
+  @@unique([userId, systemKey])
+  @@index([userId, position])
+  @@unique([id, userId])
+}
+model Task {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  columnId String
+  column BoardColumn @relation(fields: [columnId, userId], references: [id, userId], onDelete: Restrict)
+  title String
+  description String @default("")
+  dueAt DateTime?
+  position Int @default(0)
+  completedAt DateTime?
+  sourceKey String? @unique
+  sourceKind String?
+  sourceId String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  links TaskLink[]
+  completions TaskCompletion[]
+  @@index([userId, columnId, position])
+  @@index([userId, completedAt, dueAt])
+}
+model TaskLink {
+  id String @id @default(cuid())
+  taskId String
+  task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  kind String
+  recordId String
+  label String
+  @@unique([taskId, kind, recordId])
+  @@index([kind, recordId])
+}
+model TaskCompletion {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  taskId String?
+  task Task? @relation(fields: [taskId], references: [id], onDelete: SetNull)
+  taskIdentity String
+  companyIds String[] @default([])
+  sources String[] @default([])
+  title String
+  sourceKind String?
+  sourceId String?
+  completedAt DateTime @default(now())
+  @@index([userId, completedAt])
+}

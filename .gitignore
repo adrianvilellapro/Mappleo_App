@@ -1,0 +1,48 @@
+# Local environment configuration and secrets
+.env*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+mappleo-backup-*.json
+mappleo-backup-*.mappleo
+
+# Dependencies and generated output
+node_modules/
+.next/
+.next-e2e/
+.next-https-test/
+.next-deploy-check/
+test-results-deploy/
+coverage/
+playwright-report/
+test-results/
+test-results-https/
+test-results-optimizations/
+generated/
+*.tsbuildinfo
+next-env.d.ts
+*.log
+certificates/
+.local-backups/
+.neon
+.vercel/
+.deployment/
+
+# Windows desktop: never commit installed binaries or personal local data
+apps/windows/dist/
+apps/windows/release/
+apps/windows/.data/
+apps/windows/test-results/
+apps/windows/playwright-report/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+test-results-sync/
+.next-sync-e2e/
+
+# Generated static showcase: source lives in apps/demo; no account exports.
+apps/demo/dist/
+public/demo/
+test-results-demo/

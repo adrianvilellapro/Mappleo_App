@@ -1,0 +1,29 @@
+appId: com.mappleo.windows
+productName: Mappleo
+directories:
+  output: release
+files:
+  - dist/**/*
+  - package.json
+asar: true
+npmRebuild: false
+electronFuses:
+  runAsNode: false
+  enableNodeOptionsEnvironmentVariable: false
+  onlyLoadAppFromAsar: true
+  enableEmbeddedAsarIntegrityValidation: true
+win:
+  target: nsis
+  icon: resources/icon.png
+  signExecutable: false
+artifactName: Mappleo-Setup-${version}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  deleteAppDataOnUninstall: false
+  installerLanguages:
+    - es_ES
+    - en_US

@@ -1,0 +1,50 @@
+{
+  "name": "mappleo-windows",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Mappleo para Windows: espacio de búsqueda de empleo local y sin conexión",
+  "author": "Adrián Vilella",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "dist/main.cjs",
+  "scripts": {
+    "postinstall": "node node_modules/electron/install.js",
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/start.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/store.test.ts tests/sync.test.ts tests/files.test.ts",
+    "test:e2e": "npm run build && playwright test",
+    "test:launchers": "npm run build && node --test tests/launchers.test.mjs",
+    "pack": "npm run build && electron-builder --win --dir --publish never",
+    "dist": "npm run build && electron-builder --win nsis --publish never"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "overrides": {
+    "global-agent": "4.1.3"
+  },
+  "dependencies": {
+    "@fontsource/geist": "^5.3.0",
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@radix-ui/react-select": "^2.3.7",
+    "lucide-react": "^1.48.0",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "electron": "44.7.2",
+    "electron-builder": "26.15.3",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vite": "8.3.4"
+  }
+}

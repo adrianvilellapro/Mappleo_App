@@ -1,0 +1,2345 @@
+{
+  "version": 1,
+  "exportedAt": "2026-09-29T10:00:00.000Z",
+  "ownerId": "mappleo_import_demo_20260929",
+  "companies": [
+    {
+      "id": "demo_import_company_01",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "name": "Aurora Producto",
+      "websiteUrl": "https://equipo-01.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-01.example.com",
+      "careersUrl": "https://equipo-01.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Madrid",
+      "workMode": "REMOTE",
+      "sector": "SaaS",
+      "interestRating": 1,
+      "notes": "Empresa ficticia para probar la importación. Interés en saas.",
+      "tags": [
+        "demo",
+        "saas"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_02",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "name": "Brújula Digital",
+      "websiteUrl": "https://equipo-02.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-02.example.com",
+      "careersUrl": "https://equipo-02.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Valencia",
+      "workMode": "HYBRID",
+      "sector": "Movilidad",
+      "interestRating": 2,
+      "notes": "Empresa ficticia para probar la importación. Interés en movilidad.",
+      "tags": [
+        "demo",
+        "movilidad"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_03",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "name": "Nébula Salud",
+      "websiteUrl": "https://equipo-03.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-03.example.com",
+      "careersUrl": "https://equipo-03.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Barcelona",
+      "workMode": "ONSITE",
+      "sector": "Salud digital",
+      "interestRating": 3,
+      "notes": "Empresa ficticia para probar la importación. Interés en salud digital.",
+      "tags": [
+        "demo",
+        "salud digital"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_04",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "name": "Atlas Datos",
+      "websiteUrl": "https://equipo-04.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-04.example.com",
+      "careersUrl": "https://equipo-04.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Bilbao",
+      "workMode": "FLEXIBLE",
+      "sector": "Analítica",
+      "interestRating": 4,
+      "notes": "Empresa ficticia para probar la importación. Interés en analítica.",
+      "tags": [
+        "demo",
+        "analítica"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_05",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "name": "Marea Estudio",
+      "websiteUrl": "https://equipo-05.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-05.example.com",
+      "careersUrl": "https://equipo-05.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Málaga",
+      "workMode": "REMOTE",
+      "sector": "Diseño",
+      "interestRating": 5,
+      "notes": "Empresa ficticia para probar la importación. Interés en diseño.",
+      "tags": [
+        "demo",
+        "diseño"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_06",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "name": "Oliva Cloud",
+      "websiteUrl": "https://equipo-06.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-06.example.com",
+      "careersUrl": "https://equipo-06.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Sevilla",
+      "workMode": "HYBRID",
+      "sector": "Infraestructura",
+      "interestRating": 1,
+      "notes": "Empresa ficticia para probar la importación. Interés en infraestructura.",
+      "tags": [
+        "demo",
+        "infraestructura"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_07",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-07T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "name": "Lumen Finanzas",
+      "websiteUrl": "https://equipo-07.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-07.example.com",
+      "careersUrl": "https://equipo-07.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Alicante",
+      "workMode": "ONSITE",
+      "sector": "Fintech",
+      "interestRating": 2,
+      "notes": "Empresa ficticia para probar la importación. Interés en fintech.",
+      "tags": [
+        "demo",
+        "fintech"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_08",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-08T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "name": "Faro Energía",
+      "websiteUrl": "https://equipo-08.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-08.example.com",
+      "careersUrl": "https://equipo-08.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Santander",
+      "workMode": "FLEXIBLE",
+      "sector": "Energía",
+      "interestRating": 3,
+      "notes": "Empresa ficticia para probar la importación. Interés en energía.",
+      "tags": [
+        "demo",
+        "energía"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_09",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "name": "Horizonte Edu",
+      "websiteUrl": "https://equipo-09.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-09.example.com",
+      "careersUrl": "https://equipo-09.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Zaragoza",
+      "workMode": "REMOTE",
+      "sector": "Edtech",
+      "interestRating": 4,
+      "notes": "Empresa ficticia para probar la importación. Interés en edtech.",
+      "tags": [
+        "demo",
+        "edtech"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_10",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-10T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "name": "Río Abierto",
+      "websiteUrl": "https://equipo-10.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-10.example.com",
+      "careersUrl": "https://equipo-10.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Granada",
+      "workMode": "HYBRID",
+      "sector": "Cultura",
+      "interestRating": 5,
+      "notes": "Empresa ficticia para probar la importación. Interés en cultura.",
+      "tags": [
+        "demo",
+        "cultura"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_11",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-11T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "name": "Punto Cero",
+      "websiteUrl": "https://equipo-11.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-11.example.com",
+      "careersUrl": "https://equipo-11.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "Valladolid",
+      "workMode": "ONSITE",
+      "sector": "E-commerce",
+      "interestRating": 1,
+      "notes": "Empresa ficticia para probar la importación. Interés en e-commerce.",
+      "tags": [
+        "demo",
+        "e-commerce"
+      ],
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_company_12",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-12T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "name": "Verde Norte",
+      "websiteUrl": "https://equipo-12.example.com",
+      "faviconUrl": "",
+      "domain": "equipo-12.example.com",
+      "careersUrl": "https://equipo-12.example.com/empleo",
+      "linkedinUrl": "",
+      "location": "A Coruña",
+      "workMode": "FLEXIBLE",
+      "sector": "Sostenibilidad",
+      "interestRating": 2,
+      "notes": "Empresa ficticia para probar la importación. Interés en sostenibilidad.",
+      "tags": [
+        "demo",
+        "sostenibilidad"
+      ],
+      "archivedAt": "2026-09-26T10:00:00.000Z"
+    }
+  ],
+  "offers": [
+    {
+      "id": "demo_import_offer_01",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_01",
+      "title": "Frontend Engineer Mid",
+      "url": "https://equipo-01.example.com/empleo/oferta-1",
+      "source": "LINKEDIN",
+      "location": "Madrid",
+      "workMode": "REMOTE",
+      "salaryMin": null,
+      "salaryMax": null,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Aurora Producto para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS"
+      ],
+      "interestRating": 1,
+      "publishedAt": "2026-09-03T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-08T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_02",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_01",
+      "title": "Product Designer Senior",
+      "url": "https://equipo-01.example.com/empleo/oferta-2",
+      "source": "COMPANY_WEBSITE",
+      "location": "Madrid",
+      "workMode": "HYBRID",
+      "salaryMin": 30200,
+      "salaryMax": 42500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Aurora Producto para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Figma",
+        "Design Systems"
+      ],
+      "interestRating": 2,
+      "publishedAt": "2026-09-04T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-09T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_03",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_02",
+      "title": "Full Stack Developer Mid",
+      "url": "https://equipo-02.example.com/empleo/oferta-3",
+      "source": "INFOJOBS",
+      "location": "Valencia",
+      "workMode": "ONSITE",
+      "salaryMin": 31400,
+      "salaryMax": 44000,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Brújula Digital para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "interestRating": 3,
+      "publishedAt": "2026-09-05T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-10T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_04",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_02",
+      "title": "Data Analyst Senior",
+      "url": "https://equipo-02.example.com/empleo/oferta-4",
+      "source": "INDEED",
+      "location": "Valencia",
+      "workMode": "FLEXIBLE",
+      "salaryMin": 32600,
+      "salaryMax": 45500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Brújula Digital para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI"
+      ],
+      "interestRating": 4,
+      "publishedAt": "2026-09-06T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-11T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_05",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "companyId": "demo_import_company_03",
+      "title": "Backend Engineer Mid",
+      "url": "https://equipo-03.example.com/empleo/oferta-5",
+      "source": "RECRUITER",
+      "location": "Barcelona",
+      "workMode": "REMOTE",
+      "salaryMin": null,
+      "salaryMax": null,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Nébula Salud para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS"
+      ],
+      "interestRating": 5,
+      "publishedAt": "2026-09-07T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-12T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_06",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_03",
+      "title": "UX Researcher Senior",
+      "url": "https://equipo-03.example.com/empleo/oferta-6",
+      "source": "REFERRAL",
+      "location": "Barcelona",
+      "workMode": "HYBRID",
+      "salaryMin": 35000,
+      "salaryMax": 48500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Nébula Salud para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Figma",
+        "Design Systems"
+      ],
+      "interestRating": 1,
+      "publishedAt": "2026-09-08T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-13T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_07",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-07T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_04",
+      "title": "Cloud Engineer Mid",
+      "url": "https://equipo-04.example.com/empleo/oferta-7",
+      "source": "NETWORKING",
+      "location": "Bilbao",
+      "workMode": "ONSITE",
+      "salaryMin": 36200,
+      "salaryMax": 50000,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Atlas Datos para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "interestRating": 2,
+      "publishedAt": "2026-09-09T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-14T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_08",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-08T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_04",
+      "title": "Product Manager Senior",
+      "url": "https://equipo-04.example.com/empleo/oferta-8",
+      "source": "OTHER",
+      "location": "Bilbao",
+      "workMode": "FLEXIBLE",
+      "salaryMin": 37400,
+      "salaryMax": 51500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Atlas Datos para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI"
+      ],
+      "interestRating": 3,
+      "publishedAt": "2026-09-10T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-15T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_09",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_05",
+      "title": "UI Engineer Mid",
+      "url": "https://equipo-05.example.com/empleo/oferta-9",
+      "source": "LINKEDIN",
+      "location": "Málaga",
+      "workMode": "REMOTE",
+      "salaryMin": null,
+      "salaryMax": null,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Marea Estudio para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS"
+      ],
+      "interestRating": 4,
+      "publishedAt": "2026-09-11T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-16T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_10",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-10T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "companyId": "demo_import_company_05",
+      "title": "Data Engineer Senior",
+      "url": "https://equipo-05.example.com/empleo/oferta-10",
+      "source": "COMPANY_WEBSITE",
+      "location": "Málaga",
+      "workMode": "HYBRID",
+      "salaryMin": 39800,
+      "salaryMax": 54500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Marea Estudio para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "Figma",
+        "Design Systems"
+      ],
+      "interestRating": 5,
+      "publishedAt": "2026-09-12T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-17T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_11",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-11T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_06",
+      "title": "DevOps Engineer Mid",
+      "url": "https://equipo-06.example.com/empleo/oferta-11",
+      "source": "INFOJOBS",
+      "location": "Sevilla",
+      "workMode": "ONSITE",
+      "salaryMin": 41000,
+      "salaryMax": 56000,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Oliva Cloud para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "interestRating": 1,
+      "publishedAt": "2026-09-13T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-18T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_12",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-12T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_06",
+      "title": "Technical Writer Senior",
+      "url": "https://equipo-06.example.com/empleo/oferta-12",
+      "source": "INDEED",
+      "location": "Sevilla",
+      "workMode": "FLEXIBLE",
+      "salaryMin": 42200,
+      "salaryMax": 57500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Oliva Cloud para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI"
+      ],
+      "interestRating": 2,
+      "publishedAt": "2026-09-14T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-19T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_13",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_07",
+      "title": "Frontend Engineer Mid",
+      "url": "https://equipo-07.example.com/empleo/oferta-13",
+      "source": "RECRUITER",
+      "location": "Alicante",
+      "workMode": "REMOTE",
+      "salaryMin": null,
+      "salaryMax": null,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Lumen Finanzas para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS"
+      ],
+      "interestRating": 3,
+      "publishedAt": "2026-09-15T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-08T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_14",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_07",
+      "title": "Product Designer Senior",
+      "url": "https://equipo-07.example.com/empleo/oferta-14",
+      "source": "REFERRAL",
+      "location": "Alicante",
+      "workMode": "HYBRID",
+      "salaryMin": 44600,
+      "salaryMax": 60500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Lumen Finanzas para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Figma",
+        "Design Systems"
+      ],
+      "interestRating": 4,
+      "publishedAt": "2026-09-16T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-09T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_15",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "companyId": "demo_import_company_08",
+      "title": "Full Stack Developer Mid",
+      "url": "https://equipo-08.example.com/empleo/oferta-15",
+      "source": "NETWORKING",
+      "location": "Santander",
+      "workMode": "ONSITE",
+      "salaryMin": 45800,
+      "salaryMax": 62000,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Faro Energía para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "interestRating": 5,
+      "publishedAt": "2026-09-17T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-10T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_16",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_08",
+      "title": "Data Analyst Senior",
+      "url": "https://equipo-08.example.com/empleo/oferta-16",
+      "source": "OTHER",
+      "location": "Santander",
+      "workMode": "FLEXIBLE",
+      "salaryMin": 47000,
+      "salaryMax": 63500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Faro Energía para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI"
+      ],
+      "interestRating": 1,
+      "publishedAt": "2026-09-03T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-11T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_17",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_09",
+      "title": "Backend Engineer Mid",
+      "url": "https://equipo-09.example.com/empleo/oferta-17",
+      "source": "LINKEDIN",
+      "location": "Zaragoza",
+      "workMode": "REMOTE",
+      "salaryMin": null,
+      "salaryMax": null,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Horizonte Edu para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS"
+      ],
+      "interestRating": 2,
+      "publishedAt": "2026-09-04T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-12T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_18",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_09",
+      "title": "UX Researcher Senior",
+      "url": "https://equipo-09.example.com/empleo/oferta-18",
+      "source": "COMPANY_WEBSITE",
+      "location": "Zaragoza",
+      "workMode": "HYBRID",
+      "salaryMin": 49400,
+      "salaryMax": 66500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Horizonte Edu para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Figma",
+        "Design Systems"
+      ],
+      "interestRating": 3,
+      "publishedAt": "2026-09-05T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-13T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_19",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-07T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_10",
+      "title": "Cloud Engineer Mid",
+      "url": "https://equipo-10.example.com/empleo/oferta-19",
+      "source": "INFOJOBS",
+      "location": "Granada",
+      "workMode": "ONSITE",
+      "salaryMin": 50600,
+      "salaryMax": 68000,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Río Abierto para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "interestRating": 4,
+      "publishedAt": "2026-09-06T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-14T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_20",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-08T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "companyId": "demo_import_company_10",
+      "title": "Product Manager Senior",
+      "url": "https://equipo-10.example.com/empleo/oferta-20",
+      "source": "INDEED",
+      "location": "Granada",
+      "workMode": "FLEXIBLE",
+      "salaryMin": 51800,
+      "salaryMax": 69500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Río Abierto para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI"
+      ],
+      "interestRating": 5,
+      "publishedAt": "2026-09-07T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-15T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_21",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_11",
+      "title": "UI Engineer Mid",
+      "url": "https://equipo-11.example.com/empleo/oferta-21",
+      "source": "RECRUITER",
+      "location": "Valladolid",
+      "workMode": "REMOTE",
+      "salaryMin": null,
+      "salaryMax": null,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Punto Cero para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS"
+      ],
+      "interestRating": 1,
+      "publishedAt": "2026-09-08T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-16T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_22",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-10T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_11",
+      "title": "Data Engineer Senior",
+      "url": "https://equipo-11.example.com/empleo/oferta-22",
+      "source": "REFERRAL",
+      "location": "Valladolid",
+      "workMode": "HYBRID",
+      "salaryMin": 54200,
+      "salaryMax": 72500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Punto Cero para probar relaciones y filtros.",
+      "notes": "Preguntar por equipo, mentoría y horario.",
+      "technologies": [
+        "Figma",
+        "Design Systems"
+      ],
+      "interestRating": 2,
+      "publishedAt": "2026-09-09T10:00:00.000Z",
+      "deadlineAt": "2026-09-28T10:00:00.000Z",
+      "savedAt": "2026-09-17T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_23",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-11T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_12",
+      "title": "DevOps Engineer Mid",
+      "url": "https://equipo-12.example.com/empleo/oferta-23",
+      "source": "NETWORKING",
+      "location": "A Coruña",
+      "workMode": "ONSITE",
+      "salaryMin": 55400,
+      "salaryMax": 74000,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Verde Norte para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "interestRating": 3,
+      "publishedAt": "2026-09-10T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-18T10:00:00.000Z",
+      "archivedAt": null
+    },
+    {
+      "id": "demo_import_offer_24",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-12T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_12",
+      "title": "Technical Writer Senior",
+      "url": "https://equipo-12.example.com/empleo/oferta-24",
+      "source": "OTHER",
+      "location": "A Coruña",
+      "workMode": "FLEXIBLE",
+      "salaryMin": 56600,
+      "salaryMax": 75500,
+      "salaryCurrency": "EUR",
+      "description": "Oferta ficticia de Verde Norte para probar relaciones y filtros.",
+      "notes": "",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Power BI"
+      ],
+      "interestRating": 4,
+      "publishedAt": "2026-09-11T10:00:00.000Z",
+      "deadlineAt": null,
+      "savedAt": "2026-09-19T10:00:00.000Z",
+      "archivedAt": "2026-09-27T10:00:00.000Z"
+    }
+  ],
+  "applications": [
+    {
+      "id": "demo_import_application_01",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_01",
+      "status": "APPLIED",
+      "appliedAt": "2026-09-09T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 1",
+      "nextActionDueAt": "2026-09-30T10:00:00.000Z",
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": true,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_01",
+          "applicationId": "demo_import_application_01",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-09T10:00:00.000Z",
+          "createdAt": "2026-09-09T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_02",
+          "applicationId": "demo_import_application_01",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-19T10:00:00.000Z",
+          "createdAt": "2026-09-19T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_03",
+          "applicationId": "demo_import_application_01",
+          "type": "NOTE",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Preparar seguimiento",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-25T10:00:00.000Z",
+          "createdAt": "2026-09-25T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_02",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_02",
+      "status": "SCREENING",
+      "appliedAt": "2026-09-10T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 2",
+      "nextActionDueAt": "2026-10-01T10:00:00.000Z",
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_04",
+          "applicationId": "demo_import_application_02",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-10T10:00:00.000Z",
+          "createdAt": "2026-09-10T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_05",
+          "applicationId": "demo_import_application_02",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-20T10:00:00.000Z",
+          "createdAt": "2026-09-20T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_06",
+          "applicationId": "demo_import_application_02",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "SCREENING",
+          "title": "Estado actualizado: SCREENING",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-26T10:00:00.000Z",
+          "createdAt": "2026-09-26T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_03",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_03",
+      "status": "INTERVIEW",
+      "appliedAt": "2026-09-11T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 3",
+      "nextActionDueAt": "2026-10-02T10:00:00.000Z",
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_07",
+          "applicationId": "demo_import_application_03",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-11T10:00:00.000Z",
+          "createdAt": "2026-09-11T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_08",
+          "applicationId": "demo_import_application_03",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-21T10:00:00.000Z",
+          "createdAt": "2026-09-21T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_09",
+          "applicationId": "demo_import_application_03",
+          "type": "INTERVIEW",
+          "fromStatus": "APPLIED",
+          "toStatus": "INTERVIEW",
+          "title": "Estado actualizado: INTERVIEW",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-27T10:00:00.000Z",
+          "createdAt": "2026-09-27T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_04",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_04",
+      "status": "TECHNICAL_TEST",
+      "appliedAt": "2026-09-12T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 4",
+      "nextActionDueAt": "2026-10-03T10:00:00.000Z",
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": true,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_10",
+          "applicationId": "demo_import_application_04",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-12T10:00:00.000Z",
+          "createdAt": "2026-09-12T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_11",
+          "applicationId": "demo_import_application_04",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-22T10:00:00.000Z",
+          "createdAt": "2026-09-22T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_12",
+          "applicationId": "demo_import_application_04",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "TECHNICAL_TEST",
+          "title": "Estado actualizado: TECHNICAL_TEST",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-28T10:00:00.000Z",
+          "createdAt": "2026-09-28T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_05",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_05",
+      "status": "FINAL_INTERVIEW",
+      "appliedAt": "2026-09-13T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 5",
+      "nextActionDueAt": "2026-10-04T10:00:00.000Z",
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_13",
+          "applicationId": "demo_import_application_05",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-13T10:00:00.000Z",
+          "createdAt": "2026-09-13T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_14",
+          "applicationId": "demo_import_application_05",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-23T10:00:00.000Z",
+          "createdAt": "2026-09-23T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_15",
+          "applicationId": "demo_import_application_05",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "FINAL_INTERVIEW",
+          "title": "Estado actualizado: FINAL_INTERVIEW",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-25T10:00:00.000Z",
+          "createdAt": "2026-09-25T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_06",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_06",
+      "status": "OFFER_RECEIVED",
+      "appliedAt": "2026-09-14T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 6",
+      "nextActionDueAt": "2026-10-05T10:00:00.000Z",
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_16",
+          "applicationId": "demo_import_application_06",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-14T10:00:00.000Z",
+          "createdAt": "2026-09-14T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_17",
+          "applicationId": "demo_import_application_06",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-24T10:00:00.000Z",
+          "createdAt": "2026-09-24T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_18",
+          "applicationId": "demo_import_application_06",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "OFFER_RECEIVED",
+          "title": "Estado actualizado: OFFER_RECEIVED",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-26T10:00:00.000Z",
+          "createdAt": "2026-09-26T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_07",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-07T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_07",
+      "status": "REJECTED",
+      "appliedAt": "2026-09-15T10:00:00.000Z",
+      "nextAction": "",
+      "nextActionDueAt": null,
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": true,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": "2026-09-28T10:00:00.000Z",
+      "events": [
+        {
+          "id": "demo_import_history_19",
+          "applicationId": "demo_import_application_07",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-15T10:00:00.000Z",
+          "createdAt": "2026-09-15T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_20",
+          "applicationId": "demo_import_application_07",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-25T10:00:00.000Z",
+          "createdAt": "2026-09-25T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_21",
+          "applicationId": "demo_import_application_07",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "REJECTED",
+          "title": "Estado actualizado: REJECTED",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-27T10:00:00.000Z",
+          "createdAt": "2026-09-27T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_08",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-08T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_08",
+      "status": "GHOSTED",
+      "appliedAt": "2026-09-16T10:00:00.000Z",
+      "nextAction": "",
+      "nextActionDueAt": null,
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": "2026-09-28T10:00:00.000Z",
+      "events": [
+        {
+          "id": "demo_import_history_22",
+          "applicationId": "demo_import_application_08",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-16T10:00:00.000Z",
+          "createdAt": "2026-09-16T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_23",
+          "applicationId": "demo_import_application_08",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-19T10:00:00.000Z",
+          "createdAt": "2026-09-19T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_24",
+          "applicationId": "demo_import_application_08",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "GHOSTED",
+          "title": "Estado actualizado: GHOSTED",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-28T10:00:00.000Z",
+          "createdAt": "2026-09-28T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_09",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_09",
+      "status": "WITHDRAWN",
+      "appliedAt": "2026-09-17T10:00:00.000Z",
+      "nextAction": "",
+      "nextActionDueAt": null,
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": "2026-09-28T10:00:00.000Z",
+      "events": [
+        {
+          "id": "demo_import_history_25",
+          "applicationId": "demo_import_application_09",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-17T10:00:00.000Z",
+          "createdAt": "2026-09-17T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_26",
+          "applicationId": "demo_import_application_09",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-20T10:00:00.000Z",
+          "createdAt": "2026-09-20T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_27",
+          "applicationId": "demo_import_application_09",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "WITHDRAWN",
+          "title": "Estado actualizado: WITHDRAWN",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-25T10:00:00.000Z",
+          "createdAt": "2026-09-25T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_10",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-10T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_10",
+      "status": "ACCEPTED",
+      "appliedAt": "2026-09-18T10:00:00.000Z",
+      "nextAction": "",
+      "nextActionDueAt": null,
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": true,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": "2026-09-28T10:00:00.000Z",
+      "events": [
+        {
+          "id": "demo_import_history_28",
+          "applicationId": "demo_import_application_10",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-18T10:00:00.000Z",
+          "createdAt": "2026-09-18T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_29",
+          "applicationId": "demo_import_application_10",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-21T10:00:00.000Z",
+          "createdAt": "2026-09-21T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_30",
+          "applicationId": "demo_import_application_10",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "ACCEPTED",
+          "title": "Estado actualizado: ACCEPTED",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-26T10:00:00.000Z",
+          "createdAt": "2026-09-26T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_11",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-11T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_11",
+      "status": "INTERVIEW",
+      "appliedAt": "2026-09-09T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 11",
+      "nextActionDueAt": "2026-10-03T10:00:00.000Z",
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_31",
+          "applicationId": "demo_import_application_11",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-09T10:00:00.000Z",
+          "createdAt": "2026-09-09T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_32",
+          "applicationId": "demo_import_application_11",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-22T10:00:00.000Z",
+          "createdAt": "2026-09-22T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_33",
+          "applicationId": "demo_import_application_11",
+          "type": "INTERVIEW",
+          "fromStatus": "APPLIED",
+          "toStatus": "INTERVIEW",
+          "title": "Estado actualizado: INTERVIEW",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-27T10:00:00.000Z",
+          "createdAt": "2026-09-27T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_12",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-12T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_12",
+      "status": "APPLIED",
+      "appliedAt": "2026-09-10T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 12",
+      "nextActionDueAt": "2026-10-04T10:00:00.000Z",
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_34",
+          "applicationId": "demo_import_application_12",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-10T10:00:00.000Z",
+          "createdAt": "2026-09-10T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_35",
+          "applicationId": "demo_import_application_12",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-23T10:00:00.000Z",
+          "createdAt": "2026-09-23T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_36",
+          "applicationId": "demo_import_application_12",
+          "type": "NOTE",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Preparar seguimiento",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-28T10:00:00.000Z",
+          "createdAt": "2026-09-28T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_13",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_13",
+      "status": "SCREENING",
+      "appliedAt": "2026-09-11T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 13",
+      "nextActionDueAt": "2026-10-05T10:00:00.000Z",
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": true,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_37",
+          "applicationId": "demo_import_application_13",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-11T10:00:00.000Z",
+          "createdAt": "2026-09-11T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_38",
+          "applicationId": "demo_import_application_13",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-24T10:00:00.000Z",
+          "createdAt": "2026-09-24T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_39",
+          "applicationId": "demo_import_application_13",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "SCREENING",
+          "title": "Estado actualizado: SCREENING",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-25T10:00:00.000Z",
+          "createdAt": "2026-09-25T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_14",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_14",
+      "status": "TECHNICAL_TEST",
+      "appliedAt": "2026-09-12T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 14",
+      "nextActionDueAt": "2026-10-06T10:00:00.000Z",
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_40",
+          "applicationId": "demo_import_application_14",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-12T10:00:00.000Z",
+          "createdAt": "2026-09-12T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_41",
+          "applicationId": "demo_import_application_14",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-25T10:00:00.000Z",
+          "createdAt": "2026-09-25T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_42",
+          "applicationId": "demo_import_application_14",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "TECHNICAL_TEST",
+          "title": "Estado actualizado: TECHNICAL_TEST",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-26T10:00:00.000Z",
+          "createdAt": "2026-09-26T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_15",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_15",
+      "status": "INTERVIEW",
+      "appliedAt": "2026-09-13T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 15",
+      "nextActionDueAt": "2026-09-30T10:00:00.000Z",
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_43",
+          "applicationId": "demo_import_application_15",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-13T10:00:00.000Z",
+          "createdAt": "2026-09-13T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_44",
+          "applicationId": "demo_import_application_15",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-19T10:00:00.000Z",
+          "createdAt": "2026-09-19T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_45",
+          "applicationId": "demo_import_application_15",
+          "type": "INTERVIEW",
+          "fromStatus": "APPLIED",
+          "toStatus": "INTERVIEW",
+          "title": "Estado actualizado: INTERVIEW",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-27T10:00:00.000Z",
+          "createdAt": "2026-09-27T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_16",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_16",
+      "status": "REJECTED",
+      "appliedAt": "2026-09-14T10:00:00.000Z",
+      "nextAction": "",
+      "nextActionDueAt": null,
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": true,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": "2026-09-28T10:00:00.000Z",
+      "events": [
+        {
+          "id": "demo_import_history_46",
+          "applicationId": "demo_import_application_16",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-14T10:00:00.000Z",
+          "createdAt": "2026-09-14T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_47",
+          "applicationId": "demo_import_application_16",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-20T10:00:00.000Z",
+          "createdAt": "2026-09-20T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_48",
+          "applicationId": "demo_import_application_16",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "REJECTED",
+          "title": "Estado actualizado: REJECTED",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-28T10:00:00.000Z",
+          "createdAt": "2026-09-28T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_17",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_17",
+      "status": "OFFER_RECEIVED",
+      "appliedAt": "2026-09-15T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 17",
+      "nextActionDueAt": "2026-10-02T10:00:00.000Z",
+      "cvVersion": "CV técnico 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_49",
+          "applicationId": "demo_import_application_17",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-15T10:00:00.000Z",
+          "createdAt": "2026-09-15T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_50",
+          "applicationId": "demo_import_application_17",
+          "type": "EMAIL_RECEIVED",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Respuesta del equipo",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-21T10:00:00.000Z",
+          "createdAt": "2026-09-21T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_51",
+          "applicationId": "demo_import_application_17",
+          "type": "NOTE",
+          "fromStatus": "APPLIED",
+          "toStatus": "OFFER_RECEIVED",
+          "title": "Estado actualizado: OFFER_RECEIVED",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-25T10:00:00.000Z",
+          "createdAt": "2026-09-25T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_application_18",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "jobOfferId": "demo_import_offer_18",
+      "status": "APPLIED",
+      "appliedAt": "2026-09-16T10:00:00.000Z",
+      "nextAction": "Preparar siguiente paso 18",
+      "nextActionDueAt": "2026-10-03T10:00:00.000Z",
+      "cvVersion": "CV producto 2026",
+      "coverLetterUsed": false,
+      "notes": "Candidatura de demostración; no corresponde a una oferta real.",
+      "closedAt": null,
+      "events": [
+        {
+          "id": "demo_import_history_52",
+          "applicationId": "demo_import_application_18",
+          "type": "OTHER",
+          "fromStatus": null,
+          "toStatus": "APPLIED",
+          "title": "Candidatura registrada",
+          "description": "Envío inicial de la candidatura de prueba.",
+          "happenedAt": "2026-09-16T10:00:00.000Z",
+          "createdAt": "2026-09-16T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_53",
+          "applicationId": "demo_import_application_18",
+          "type": "CALL",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Llamada con talento",
+          "description": "Conversación ficticia sobre el proceso y los siguientes pasos.",
+          "happenedAt": "2026-09-22T10:00:00.000Z",
+          "createdAt": "2026-09-22T10:00:00.000Z"
+        },
+        {
+          "id": "demo_import_history_54",
+          "applicationId": "demo_import_application_18",
+          "type": "NOTE",
+          "fromStatus": null,
+          "toStatus": null,
+          "title": "Preparar seguimiento",
+          "description": "Nota de demostración editable desde el historial.",
+          "happenedAt": "2026-09-26T10:00:00.000Z",
+          "createdAt": "2026-09-26T10:00:00.000Z"
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "demo_import_contact_01",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_01",
+      "name": "Lucía Vega",
+      "role": "Recruiter",
+      "email": "contacto01@example.com",
+      "linkedinUrl": "",
+      "phone": "+34 000 000 000",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": "2026-09-21T10:00:00.000Z",
+      "followUpAt": "2026-09-30T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_02",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_02",
+      "name": "Marcos Ríos",
+      "role": "Tech Lead",
+      "email": "contacto02@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_03",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_03",
+      "name": "Elena Soto",
+      "role": "People Partner",
+      "email": "contacto03@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-02T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_04",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_04",
+      "name": "Daniel Costa",
+      "role": "Recruiter",
+      "email": "contacto04@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": "2026-09-21T10:00:00.000Z",
+      "followUpAt": "2026-10-03T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_05",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "companyId": "demo_import_company_05",
+      "name": "Nora Vidal",
+      "role": "Tech Lead",
+      "email": "contacto05@example.com",
+      "linkedinUrl": "",
+      "phone": "+34 000 000 000",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-04T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_06",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_06",
+      "name": "Hugo León",
+      "role": "People Partner",
+      "email": "contacto06@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-05T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_07",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-07T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_07",
+      "name": "Irene Blanco",
+      "role": "Recruiter",
+      "email": "contacto07@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": "2026-09-21T10:00:00.000Z",
+      "followUpAt": "2026-10-06T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_08",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-08T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_08",
+      "name": "Clara Soler",
+      "role": "Tech Lead",
+      "email": "contacto08@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-07T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_09",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_09",
+      "name": "Pablo Luna",
+      "role": "People Partner",
+      "email": "contacto09@example.com",
+      "linkedinUrl": "",
+      "phone": "+34 000 000 000",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-08T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_10",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-10T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "companyId": "demo_import_company_10",
+      "name": "Marta Navarro",
+      "role": "Recruiter",
+      "email": "contacto10@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": "2026-09-21T10:00:00.000Z",
+      "followUpAt": "2026-10-09T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_11",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-11T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": "demo_import_company_11",
+      "name": "Sofía Martín",
+      "role": "Tech Lead",
+      "email": "contacto11@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-10T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_12",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-12T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": "demo_import_company_12",
+      "name": "Leo Fuentes",
+      "role": "People Partner",
+      "email": "contacto12@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": "2026-10-11T10:00:00.000Z"
+    },
+    {
+      "id": "demo_import_contact_13",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": "demo_import_company_01",
+      "name": "Vera Romero",
+      "role": "Recruiter",
+      "email": "contacto13@example.com",
+      "linkedinUrl": "",
+      "phone": "+34 000 000 000",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": "2026-09-21T10:00:00.000Z",
+      "followUpAt": null
+    },
+    {
+      "id": "demo_import_contact_14",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "companyId": "demo_import_company_02",
+      "name": "Raúl Pardo",
+      "role": "Tech Lead",
+      "email": "contacto14@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": null
+    },
+    {
+      "id": "demo_import_contact_15",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "companyId": "demo_import_company_03",
+      "name": "Álex Serrano",
+      "role": "People Partner",
+      "email": "contacto15@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": null
+    },
+    {
+      "id": "demo_import_contact_16",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "companyId": null,
+      "name": "Olga Torres",
+      "role": "Recruiter",
+      "email": "contacto16@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": "2026-09-21T10:00:00.000Z",
+      "followUpAt": null
+    },
+    {
+      "id": "demo_import_contact_17",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "companyId": null,
+      "name": "Inés Molina",
+      "role": "Tech Lead",
+      "email": "contacto17@example.com",
+      "linkedinUrl": "",
+      "phone": "+34 000 000 000",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": null
+    },
+    {
+      "id": "demo_import_contact_18",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "companyId": null,
+      "name": "Bruno Ferrer",
+      "role": "People Partner",
+      "email": "contacto18@example.com",
+      "linkedinUrl": "",
+      "phone": "",
+      "notes": "Contacto ficticio creado para probar importación y seguimiento.",
+      "lastContactAt": null,
+      "followUpAt": null
+    }
+  ],
+  "networking": [
+    {
+      "id": "demo_import_networking_01",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-01T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "name": "Feria de talento 1",
+      "type": "JOB_FAIR",
+      "startsAt": "2026-09-30T17:00:00.000Z",
+      "endsAt": "2026-09-30T19:00:00.000Z",
+      "location": "Online",
+      "url": "https://eventos.example.com/evento-1",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_01"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_01"
+        },
+        {
+          "id": "demo_import_contact_02"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_02",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-02T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "name": "Encuentro de producto 2",
+      "type": "MEETUP",
+      "startsAt": "2026-10-02T17:00:00.000Z",
+      "endsAt": "2026-10-02T19:00:00.000Z",
+      "location": "Valencia",
+      "url": "https://eventos.example.com/evento-2",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_02"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_02"
+        },
+        {
+          "id": "demo_import_contact_03"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_03",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "name": "Taller técnico 3",
+      "type": "WORKSHOP",
+      "startsAt": "2026-10-04T17:00:00.000Z",
+      "endsAt": "2026-10-04T19:00:00.000Z",
+      "location": "Barcelona",
+      "url": "https://eventos.example.com/evento-3",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_03"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_03"
+        },
+        {
+          "id": "demo_import_contact_04"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_04",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-04T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "name": "Jornada profesional 4",
+      "type": "CAREER_DAY",
+      "startsAt": "2026-10-06T17:00:00.000Z",
+      "endsAt": "2026-10-06T19:00:00.000Z",
+      "location": "Online",
+      "url": "https://eventos.example.com/evento-4",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_04"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_04"
+        },
+        {
+          "id": "demo_import_contact_05"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_05",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "name": "Hackathon de datos 5",
+      "type": "HACKATHON",
+      "startsAt": "2026-10-08T17:00:00.000Z",
+      "endsAt": "2026-10-08T19:00:00.000Z",
+      "location": "Málaga",
+      "url": "https://eventos.example.com/evento-5",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_05"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_05"
+        },
+        {
+          "id": "demo_import_contact_06"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_06",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "updatedAt": "2026-09-24T10:00:00.000Z",
+      "name": "Conferencia digital 6",
+      "type": "CONFERENCE",
+      "startsAt": "2026-10-10T17:00:00.000Z",
+      "endsAt": "2026-10-10T19:00:00.000Z",
+      "location": "Sevilla",
+      "url": "https://eventos.example.com/evento-6",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_06"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_06"
+        },
+        {
+          "id": "demo_import_contact_07"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_07",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-07T10:00:00.000Z",
+      "updatedAt": "2026-09-25T10:00:00.000Z",
+      "name": "Puertas abiertas 7",
+      "type": "OPEN_DAY",
+      "startsAt": "2026-10-12T17:00:00.000Z",
+      "endsAt": "2026-10-12T19:00:00.000Z",
+      "location": "Online",
+      "url": "https://eventos.example.com/evento-7",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_07"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_07"
+        },
+        {
+          "id": "demo_import_contact_08"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_08",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-08T10:00:00.000Z",
+      "updatedAt": "2026-09-26T10:00:00.000Z",
+      "name": "Café de comunidad 8",
+      "type": "OTHER",
+      "startsAt": "2026-10-14T17:00:00.000Z",
+      "endsAt": "2026-10-14T19:00:00.000Z",
+      "location": "Santander",
+      "url": "https://eventos.example.com/evento-8",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_08"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_08"
+        },
+        {
+          "id": "demo_import_contact_09"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_09",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "updatedAt": "2026-09-27T10:00:00.000Z",
+      "name": "Meetup frontend 9",
+      "type": "MEETUP",
+      "startsAt": "2026-10-16T17:00:00.000Z",
+      "endsAt": "2026-10-16T19:00:00.000Z",
+      "location": "Zaragoza",
+      "url": "https://eventos.example.com/evento-9",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_09"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_09"
+        },
+        {
+          "id": "demo_import_contact_10"
+        }
+      ]
+    },
+    {
+      "id": "demo_import_networking_10",
+      "userId": "mappleo_import_demo_20260929",
+      "createdAt": "2026-09-10T10:00:00.000Z",
+      "updatedAt": "2026-09-28T10:00:00.000Z",
+      "name": "Conferencia de diseño 10",
+      "type": "CONFERENCE",
+      "startsAt": "2026-10-18T17:00:00.000Z",
+      "endsAt": "2026-10-18T19:00:00.000Z",
+      "location": "Online",
+      "url": "https://eventos.example.com/evento-10",
+      "notes": "Evento ficticio. Comprobar relaciones con empresas y contactos.",
+      "companies": [
+        {
+          "id": "demo_import_company_10"
+        }
+      ],
+      "contacts": [
+        {
+          "id": "demo_import_contact_10"
+        },
+        {
+          "id": "demo_import_contact_11"
+        }
+      ]
+    }
+  ]
+}
