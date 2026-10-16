@@ -36,7 +36,7 @@ Supports 64-bit Windows 10/11. Installer in English and Spanish; application int
 
 Create and edit records, link them, complete tasks, move cards and explore the calendar and statistics. Changes stay temporarily in this browser tab for **up to 30 minutes**; sample data is restored automatically on expiry. There are no real accounts, sync, file uploads or API calls. Do not enter personal information. This is not a downloadable Windows demo.
 
-The demo is distributed separately from the web application: **it is not part of the Vercel service**. The buttons will become available once the author enables GitHub Pages. The `gh-pages` branch contains the ready-to-serve site, with no keys or services.
+The demo is available on **GitHub Pages**, separately from the web application: **it is not part of the Vercel service**. The `gh-pages` branch contains the ready-to-serve site, with no keys or services.
 
 [Open the real web application](https://mappleo.vercel.app) · Requires an account and a private registration code.
 

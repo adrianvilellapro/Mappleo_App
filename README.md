@@ -36,7 +36,7 @@ Compatible con Windows 10/11 de 64 bits. Instalador en español e inglés; inter
 
 Puedes crear y editar registros, relacionarlos, completar tareas, mover tarjetas y explorar calendario y estadísticas. Los cambios solo se conservan temporalmente en esta pestaña del navegador, **hasta 30 minutos**; se restablecen automáticamente al caducar. No hay cuentas reales, sincronización, subidas de archivos ni llamadas a la API. No introduzcas datos personales. No es una demo descargable de Windows.
 
-La demo se distribuye por separado de la aplicación web: **no forma parte del servicio de Vercel**. Los botones estarán disponibles cuando el autor active GitHub Pages. La rama `gh-pages` contiene el sitio ya compilado, sin claves ni servicios.
+La demo está disponible en **GitHub Pages**, por separado de la aplicación web: **no forma parte del servicio de Vercel**. La rama `gh-pages` contiene el sitio ya compilado, sin claves ni servicios.
 
 [Acceder a la aplicación web real](https://mappleo.vercel.app) · Requiere una cuenta y código de registro privado.
 
